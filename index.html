@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhruv Joshi - AI/ML Engineer</title>
+<meta name="description" content="Portfolio of Dhruv Joshi, AI/ML Engineer building production LLM systems, RAG pipelines and agentic AI for clinical, IP and legal domains.">
+<script>
+  // Apply the saved theme before the page paints, so it doesn't flash
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #111111; --muted: #555555; --accent: #3d7a74;
+    --line: #e9ecef; --card: #f6f7f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15181a; --fg: #eceeef; --muted: #a8adb1; --accent: #6fbdb4;
+      --line: #2b3034; --card: #1d2124;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15181a; --fg: #eceeef; --muted: #a8adb1; --accent: #6fbdb4;
+    --line: #2b3034; --card: #1d2124;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.7 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+  header {
+    position: sticky; top: 0; z-index: 10; background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; flex-wrap: wrap; }
+  .logo { font-size: 1.9rem; text-decoration: none; color: var(--fg); letter-spacing: -0.5px; white-space: nowrap; }
+  .logo b { color: var(--accent); }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 28px; align-items: center; }
+  nav a { color: var(--fg); text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3px; }
+  nav a:hover { color: var(--accent); }
+  #theme { background: none; border: 1px solid var(--line); color: var(--fg); border-radius: 6px; padding: 4px 10px; font: inherit; font-size: 0.85rem; cursor: pointer; }
+
+  .hero { padding: 72px 0 24px; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; margin: 0 0 12px; }
+  .hero p.role { font-size: 1.25rem; color: var(--accent); margin: 0 0 20px; font-weight: 700; }
+  .hero p { color: var(--muted); max-width: 760px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 6px; border: 1px solid var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+
+  section { padding: 24px 0 16px; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 48px 0 24px; }
+  h3 { font-size: 1.2rem; margin: 0; }
+  p { margin: 0 0 1.2rem; }
+  .muted { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 12px 16px; vertical-align: top; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { font-weight: 700; width: 200px; }
+
+  .item { padding: 24px 0; border-bottom: 1px solid var(--line); }
+  .item:last-child { border-bottom: none; }
+  .item-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
+  .item-head .when { color: var(--muted); font-size: 0.95rem; }
+  .item .sub { color: var(--accent); font-weight: 700; margin: 2px 0 10px; }
+  ul { padding-left: 20px; margin: 8px 0 0; }
+  li { margin-bottom: 8px; }
+
+  .card { background: var(--card); border-radius: 10px; padding: 24px; margin-bottom: 16px; }
+  .card h3 { margin-bottom: 6px; }
+  .tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; letter-spacing: 0.4px; }
+
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 24px 0; color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 640px) {
+    td { display: block; width: auto !important; padding: 4px 0; border: none; }
+    td:first-child { padding-top: 14px; }
+    tr { display: block; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Dhruv</b>Joshi</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Work Experience</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Me</a>
+      <button id="theme" type="button" aria-label="Toggle color theme">✨ Auto</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="hero">
+    <h1>Dhruv Joshi</h1>
+    <p class="role">AI &amp; ML Engineer: LLM systems, RAG and agentic AI</p>
+    <p>I build production-grade LLM systems for regulated domains, including clinical AI, IP intelligence and legal NLP. I currently lead the technical work on Liver Digital Twin and HCC detection at Karyon.Bio.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:info.joshidhruv@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/dhruv-joshi-904a65187">LinkedIn</a>
+      <a class="btn" href="https://github.com/DJCodesStuff">GitHub</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <h3 style="margin-bottom:12px">Professional Summary</h3>
+    <p class="muted">I am an AI &amp; ML Engineer with 4+ years of experience building production-grade LLM systems, RAG pipelines and agentic AI. I've worked in biomedical AI, IP intelligence and legal NLP. I design and ship complete solutions, from retrieval and agent orchestration to evaluation, observability and deployment, using LangChain/LangGraph, FastAPI and modern MLOps tooling (Docker, Kubernetes, Airflow).</p>
+    <p class="muted">I care about rigorous, quantitative evaluation: calibration analysis, leakage-free test splits and failure-mode sampling guide every iteration. I also build privacy-first infrastructure so sensitive data like patient records never leaves controlled environments.</p>
+
+    <h3 style="margin:32px 0 8px">Core Expertise &amp; Skills</h3>
+    <table>
+      <tr><td>AI &amp; ML</td><td>LLMs (GPT-4/5, LLaMA, Gemini, MedGemma), RAG, Semantic Search, Transformers, Prompt Engineering, LoRA / PEFT, Multimodal AI, Agentic AI, Digital Twins, Model Evaluation</td></tr>
+      <tr><td>Frameworks</td><td>LangChain, LangGraph, HuggingFace, PyTorch, TensorFlow, TabNet, FastAPI, Flask, Streamlit, Pydantic</td></tr>
+      <tr><td>MLOps &amp; Cloud</td><td>Docker, Kubernetes, Airflow, MLflow, W&amp;B, CI/CD, Qdrant, Chroma, Redis, AWS (S3, Lambda, EMR, Athena), GCP Vertex AI, Azure</td></tr>
+      <tr><td>Data &amp; Languages</td><td>Python, SQL, Spark, Hadoop, Snowflake, PostgreSQL, MongoDB, Elasticsearch, JavaScript, R, MATLAB</td></tr>
+    </table>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="item">
+      <div class="item-head"><h3>AI/ML Engineer, Karyon.Bio</h3><span class="when">Aug 2025 – Present · New York, NY</span></div>
+      <div class="sub">Technical lead: Liver Digital Twin &amp; HCC Detection</div>
+      <ul>
+        <li>Shipped a clinical decision-support pipeline for liver fibrosis staging (F0–F4) on a biopsy-referred patient cohort, and removed evaluation leakage using confusion-matrix diffs, calibration-bin analysis and per-patient failure-mode sampling.</li>
+        <li>Designed a LangGraph ReAct pipeline with deterministic safety gates grounded in AASLD/EASL guidelines, a PageIndex retrieval layer and a provider-agnostic LLM layer (OpenAI, Anthropic, Bedrock, Gemini, Moonshot).</li>
+        <li>Built multimodal HCC detection from start to finish. It fuses genomic data, EHR records and liver MRI/CT imaging with a MedGemma + TabNet architecture, validated on held-out data across all three modalities.</li>
+        <li>Engineered a fully offline, LangSmith-style observability stack (hierarchical JSONL spans, nested tool-call tracing, Streamlit dashboards) that keeps patient-derived data off third-party services.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head"><h3>AI/ML Engineer (Founding), Squirrel IP</h3><span class="when">Aug 2024 – Aug 2025 · New York, NY</span></div>
+      <div class="sub">Sole ML/AI engineer, leading a cross-functional team of 3–4</div>
+      <ul>
+        <li>Architected Artha, an AI-powered patent valuation engine. It turns granted patents into bank-grade credit scores using Cost + Market + Income triangulation and Monte Carlo simulation (N=10,000).</li>
+        <li>Deployed a multi-agent LLM document intelligence system (LangChain, RAG, Qdrant) that integrates 6+ live data APIs and returns auditable JSON to financial institutions.</li>
+        <li>Scaled the full pipeline (ingestion → RAG → valuation → report) on FastAPI, Kubernetes and Airflow, with access control and audit traceability.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head"><h3>Data Engineer, Go Digital Technology Consulting</h3><span class="when">Jul 2022 – Aug 2023 · Mumbai, India</span></div>
+      <ul>
+        <li>Built and optimized PySpark ETL pipelines that process terabytes of financial data.</li>
+        <li>Led the Hadoop → AWS migration (EMR, S3, Athena, Lambda), improving scalability and retrieval time.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-head"><h3>M.S. Computer Science</h3><span class="when">2025</span></div>
+      <div class="sub">Pace University, Seidenberg School of Computer Science · New York, NY</div>
+    </div>
+    <div class="item">
+      <div class="item-head"><h3>B.E. Electronics &amp; Telecommunication</h3></div>
+      <div class="sub">A.P. Shah Institute of Technology · Mumbai, India</div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications &amp; Research</h2>
+    <div class="card">
+      <span class="tag">arXiv · Dec 2025</span>
+      <h3>Large-Language Memorization During the Classification of United States Supreme Court Cases</h3>
+      <p class="muted" style="margin:8px 0">This paper benchmarks BERT, Legal-BERT, LLaMA 3 and DeepSeek on 279 legal issue categories, comparing fine-tuning with RAG-based approaches and studying memorization versus generalization. The best result was F1 0.624.</p>
+      <a href="https://doi.org/10.48550/arXiv.2512.13654">DOI: 10.48550/arXiv.2512.13654</a>
+    </div>
+    <div class="card">
+      <span class="tag">Collaboration · Karyon.Bio</span>
+      <h3>Multi-Modal Fusion Framework for HCC Prediction</h3>
+      <p class="muted" style="margin:8px 0">This framework integrates transcriptomics, medical imaging and clinical attributes to improve hepatocellular carcinoma diagnosis. I built it with <a href="https://kiran-adhikari.github.io/about/">Kiran Adhikari</a>, and my work covered the multimodal modeling (MedGemma + TabNet) and the pipeline.</p>
+      <a href="https://kiran-adhikari.github.io/publications/hcc-prediction-2025/">Project page →</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Select Projects</h2>
+    <div class="card">
+      <h3>Rosa: AI-Powered Women's Health Chatbot</h3>
+      <p class="muted" style="margin:8px 0 0">A multi-agent LLM health assistant with session memory and RAG over a curated knowledge base. It has three specialized agents (mental health, physical health, triage) and scaled to 25K users.</p>
+    </div>
+    <div class="card">
+      <h3>CRM Multi-Agent AI System with Knowledge Graph</h3>
+      <p class="muted" style="margin:8px 0 0">Audit-ready CRM automation with semantic search, Google Calendar integration and auto-tagging, deployed as FastAPI + Flask microservices with knowledge-graph memory.</p>
+    </div>
+    <div class="card">
+      <h3>Multilingual Document Analysis Assistant</h3>
+      <p class="muted" style="margin:8px 0 0">An assistant that extracts technical terminology across languages using BM25 reranking, RAG and a fine-tuned term identifier. Built with Streamlit, Flask and Gemini Pro, it accepts PDF, DOCX and TXT files.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p class="muted">I'm open to conversations about AI/ML engineering, clinical AI and LLM systems.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:info.joshidhruv@gmail.com">info.joshidhruv@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/dhruv-joshi-904a65187">LinkedIn</a>
+      <a class="btn" href="https://github.com/DJCodesStuff">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© 2026 Dhruv Joshi</div></footer>
+
+<script>
+  // Cycle auto → light → dark
+  var btn = document.getElementById("theme");
+  var labels = { auto: "✨ Auto", light: "☀️ Light", dark: "🌑 Dark" };
+  var cur = document.documentElement.getAttribute("data-theme") || "auto";
+  btn.textContent = labels[cur];
+  btn.onclick = function () {
+    cur = { auto: "light", light: "dark", dark: "auto" }[cur];
+    if (cur === "auto") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", cur);
+    btn.textContent = labels[cur];
+    try { localStorage.setItem("theme", cur); } catch (e) {}
+  };
+</script>
+</body>
+</html>
